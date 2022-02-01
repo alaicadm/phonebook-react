@@ -1,15 +1,35 @@
 import React from 'react';
+import App from '../App';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const Body = ({ title }) => {
+
+    //events
+    function refreshClicked (e) {
+        document.getElementById('contactForm').reset();
+      
+        Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Refreshed!',
+        showConfirmButton: false,
+        timer: 1000
+        })
+
+    }
+
+
+
   return <div class='body'>
         
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <form>
+                    <form id="contactForm">
                         <div class = "row field">
                             <label for="fname" >First Name:</label>
-                            <input type="text" id="fname" name="fname" ></input>
+                            <input type="text" id="fname" name="fname"></input>
                         </div>
 
                         <div class = "row field">
@@ -47,7 +67,7 @@ const Body = ({ title }) => {
                             <button class="btn btn-sm btn-def"><i class="bi bi-trash"></i></button>
                         </div>
                         <div class = "col-md-3">
-                            <button class="btn btn-sm btn-def"><i class="bi bi-arrow-clockwise"></i></button>
+                            <button class="btn btn-sm btn-def" onClick={refreshClicked} ><i class="bi bi-arrow-clockwise"></i></button>
                         </div>
                     </div>
 
