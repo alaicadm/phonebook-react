@@ -5,17 +5,6 @@ import Footer from './components/Footer';
 import Body  from './components/Body';
 import React  from 'react';
 
-//function App() {
-
-  // return (
-  //   <div className="App">
-
-  //     <Header />
-       
-  //   </div>
-  // );
-
-//}
 
 class App extends React.Component{
   render() {
